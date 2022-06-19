@@ -1,0 +1,10 @@
+#:import MapView kivy.garden.mapview.MapView
+
+MapView:
+	lat: 9.1450
+	lon: 40.4897
+	zoom: 10
+	MapMarkerPopup:
+		lat:9.1450 
+		lon:40.4897
+		popup_size: 350, 350

@@ -1,0 +1,1 @@
+background_color: utils.get_color_hex()

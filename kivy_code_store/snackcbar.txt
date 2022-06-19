@@ -1,0 +1,5 @@
+
+#: import Snackbar kivymd.uix.snackbar.Snackbar
+
+
+        on_release: Snackbar(text='This is a snackbar!').open()

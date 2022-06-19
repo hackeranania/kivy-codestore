@@ -1,0 +1,42 @@
+from kivy.app import App
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput 
+from kivy.uix.widget import Widget
+from kivy.uix.gridlayout import GridLayout 
+from kivy.properties import ObjectProperty
+class mygrid(Widget):
+	logo = ObjectProperty(None)
+	def jango(self):
+		print(self.logo.text)
+		#self.add_widget(Label(text='you love'  +  str(self.tk.text) ))
+	
+class joro(App):
+	def build(self):
+		return mygrid()
+
+joro().run()				
+.kv file
+<mygrid>
+	GridLayout:
+		cols : 1
+		size : root.width ,root.height
+		GridLayout:
+			cols : 2
+			Label:
+				text: 'name '
+			TextInput:
+				multiline: False
+			Label:
+				text: 'age  '
+			TextInput:
+				multiline: False
+			Label:
+				text: 'borning'
+			TextInput:
+				id : 1
+				multiline:False								
+		Button:
+			text:'click here '			
+		
+				 

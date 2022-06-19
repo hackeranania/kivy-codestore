@@ -1,0 +1,102 @@
+<Layout_>:
+    ScrollView:
+        #size : self.size
+        GridLayout:
+            size_hint_x:None
+            #size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            rows:1
+            spacing:'20dp'
+            padding:'20dp'
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint_y:None
+                width:'400'
+                height:'50'
+                size_hint_y:.8
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:None,1
+                width:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:None,1
+                width:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:None,1
+                width:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:None,1
+                width:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:None,1
+                width:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                #size_hint:1,None
+                #width:'200'
+
+                elevation:5 
+                border_radius:20
+                radius :[15]        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivymd.uix.boxlayout import MDBoxLayout
+
+class maths(MDApp):
+    def build(self):
+        Builder.load_file('new.kv')
+        #return Layout_()
+
+maths().run()       

@@ -1,0 +1,9 @@
+outline_color:(0,0,.5)
+			outline_width: 20
+			background_color:(255, 0, 0, 1)  
+			canvas.before:
+				Color:
+					rgba : self.background_color
+				Rectangle:
+					size: self.size
+					pos : self.pos

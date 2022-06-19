@@ -1,0 +1,31 @@
+from kivy.app import App
+from kivy.uix.widget import Widget 
+from kivy.factory import Factory
+
+
+class my(Widget):
+	def man(self):
+		Factory.mypop().open()
+
+class java(App):
+	def build(self):
+		return my()
+java().run()		
+
+
+
+#: import Factory kivy.factory.Factory
+<mypop@Popup>
+	auto_dismiss : True
+	title : 'help'
+	size_hint: 0.6,0.6
+	pos_hint : {'x':0.2 , 'top' : 0.8}
+
+
+<my>
+	BoxLayout:
+		orientation : 'vertical'
+		size : root.width , root.height 	
+		Button: 
+			text : 'hi there'
+			on_press : root.man()

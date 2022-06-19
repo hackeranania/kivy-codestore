@@ -1,0 +1,114 @@
+FloatLayout:
+					MDToolbar:
+						title: '          ABOUT'
+						pos_hint: {'top': 1}
+					MDIconButton:
+			    		pos_hint: {'center_x': 0.05,'center_y':.95}
+			    		icon:'arrow-left'
+			    		on_press : screen_manage.current = '2'	
+			    	ScrollView:	
+						pos_hint: {'top': .87}
+						bar_color:0,0,0,0
+						bar_inactive_color:0,0,0,0
+						GridLayout:
+							#padding: [50,0]
+							#size_hint_x:None 
+							size_hint_y: None
+							height: 350
+			    			#width: 2150
+							#pos_hint: {'top': .891}
+							cols: 1
+							rows:3
+							#spacing: (50,0)
+							MDLabel:
+								text: 'Feautered Themes\n   \n    '
+								halign: 'center'
+								size_hint_y: None
+								height: self.texture_size[1]
+					    	ScrollView:
+					    		bar_color:0,0,0,0
+					    		bar_inactive_color:0,0,0,0
+								#scroll_x: 0
+								GridLayout:
+									padding: [50,0]
+									size_hint_x:None 
+									#size_hint_y: None
+					    			width: 1440
+									#pos_hint: {'top': .891}
+									pos_hint: {'top': .87}
+									cols: 6
+									spacing: (50,0)
+									MDCard:
+										size_hint_y: None
+										size_hint_x: None
+										height: 190
+										width: 190
+										radius:[29]
+										ripple_behavior: True
+										#padding: 190
+										FitImage:
+											source: 'ty.png'
+											size_hint_x: 1	
+											radius:[29,]
+									MDCard:
+										size_hint_y: None
+										size_hint_x: None
+										height: 190
+										width: 190
+										radius:[29]
+										ripple_behavior: True
+										#padding: 190
+										FitImage:
+											source: 'ty.png'
+											size_hint_x: 1	
+											radius:[29,]
+									MDCard:
+										size_hint_y: None
+										size_hint_x: None
+										height: 190
+										width: 190
+										radius:[29]
+										ripple_behavior: True
+										#padding: 190
+										FitImage:
+											source: 'ty.png'
+											size_hint_x: 1	
+											radius:[29,]
+									MDCard:
+										size_hint_y: None
+										size_hint_x: None
+										height: 190
+										width: 190
+										radius:[29]
+										ripple_behavior: True
+										#padding: 190
+										FitImage:
+											source: 'ty.png'
+											size_hint_x: 1	
+											radius:[29,]
+									MDCard:
+										size_hint_y: None
+										size_hint_x: None
+										height: 190
+										width: 190
+										radius:[29]
+										ripple_behavior: True
+										#padding: 190
+										FitImage:
+											source: 'ty.png'
+											size_hint_x: 1	
+											radius:[29,]
+									MDCard:
+										size_hint_y: None
+										size_hint_x: None
+										height: 190
+										width: 190
+										radius:[29]
+										ripple_behavior: True
+										#padding: 190
+										FitImage:
+											source: 'ty.png'
+											size_hint_x: 1	
+											radius:[29,]
+							MDLabel:
+								text: 'unsupported'

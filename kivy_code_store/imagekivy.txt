@@ -1,0 +1,3 @@
+Image:
+			source : 'index.png'
+			allow_strech : True

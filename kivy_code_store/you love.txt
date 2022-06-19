@@ -1,0 +1,20 @@
+from kivy.app import App
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput 
+from kivy.uix.gridlayout import GridLayout 
+class mygrid(GridLayout):
+	def jango(self,instance):
+		#print(self.tk.text)
+		self.add_widget(Label(text='you love'  +  str(self.tk.text)))
+	def __init__(self,**kwargs):
+		super(mygrid,self).__init__(**kwargs)
+		self.cols= 2
+		self.add_widget(Button(text='click here to run',on_press=self.jango))
+		self.tk = TextInput()
+		self.add_widget(self.tk)
+class joro(App):
+	def build(self):
+		return mygrid()
+
+joro().run()				

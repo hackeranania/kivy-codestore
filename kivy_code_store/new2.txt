@@ -1,0 +1,114 @@
+from kivymd.app import MDApp
+from kivy.lang import Builder
+import sqlite3
+import requests 
+from covid import *
+
+#"""""""""""""""""covid files""""""""""""""""""""""""""
+covid = Covid()
+
+
+
+
+#""""""""""""""""""""""""""""""""""""""""""
+#data base files ''''''''''''''''
+con = sqlite3.connect('cat.db')
+c = con.cursor()
+c.execute('''CREATE TABLE IF NOT EXISTS shirt
+	(theme text)''')
+c.execute('''INSERT INTO shirt VALUES ('Dark')''')	
+#''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+class java(MDApp):
+	try:
+		requests.get('https://google.com',timeout=5)
+		image = 'tr.png'
+		test = ''
+	except:
+		image = 'no.png'
+		test = ''	
+		
+
+
+	def mango(self,instace):
+		icon = instace.icon
+		if icon == 'brightness-7':
+			self.theme_cls.theme_style = "Light"
+			mode = 'light'
+			c.execute('UPDATE shirt SET theme ="Light" ')
+			con.commit()
+		if icon == 'brightness-4':
+			self.theme_cls.theme_style = "Dark"
+			mode = 'Dark'
+			c.execute('UPDATE shirt SET theme ="Dark" ')
+			con.commit()			
+	
+
+	def build(self):
+		self.root.ids.var.source = ''
+		c.execute('SELECT theme FROM shirt')
+		man = c.fetchone()
+		sawo = str(man)
+		fi = sawo.replace('(','')
+		tw = fi.replace(')','')
+		self.theme_cls.primary_palette = 'Teal'
+		thr = tw.replace(',','')
+		quote = thr.replace("'","")
+
+		self.theme_cls.theme_style = quote
+		return Builder.load_file('java.kv')
+		con.commit()
+
+java().run()
+
+
+
+
+
+
+
+MDBoxLayout:       
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name:'Local area '
+            text : 'Local cases'
+            icon : 'chevron-down'
+            Image:
+                source : app.image
+            MDLabel:
+                id : labe
+                text: app.test
+                pos_hint :{'center_x':.5 , 'center_y':.3} 
+                halign : 'center'  
+
+            MDFloatingActionButtonSpeedDial:
+                root_button_anim : True
+                data : {'DARK MODE':'brightness-4','LIGHT MODE':'brightness-7'}
+                callback : app.mango
+
+        MDBottomNavigationItem:
+            name : 'Gloabl '
+            text : 'Global cases'
+            icon :'google-earth'
+            Image:
+                source : app.image
+
+
+            MDLabel:
+                text:app.test
+                pos_hint :{'center_x':.5 , 'center_y':.3} 
+                halign : 'center'    
+            MDFloatingActionButtonSpeedDial:
+                id : jarvis
+                root_button_anim : True
+                data : {'DARK MODE':'brightness-4','LIGHT MODE':'brightness-7'}
+                callback:app.mango
+                Image:
+                    id : var
+                    source : app.image
+               
+
+ 
+                   
+		               
+              

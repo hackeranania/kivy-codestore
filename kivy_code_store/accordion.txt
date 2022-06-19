@@ -1,0 +1,22 @@
+py file startup file 
+
+
+
+
+
+<my>
+	BoxLayout:
+		orientation : 'vertical'
+		size : root.width , root.height 
+		Accordion:
+			orientation : 'vertical'
+			AccordionItem:
+			
+				title : '1 '
+				Label:
+					text: 'hi there'
+			AccordionItem:
+				title : '2 '
+				Label:
+					text: 'bye world'		
+						

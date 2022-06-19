@@ -1,0 +1,16 @@
+'''import requests
+import json
+#heads = {'Content-type': 'application/json'}
+s=requests.Session()
+datas = {
+  "engine": "Google",
+  "data": {
+    "text": "Hello, world",
+    "voice":"en-US"
+  }
+}
+r = s.post('https://api.soundoftext.com',json=datas )#,headers=data)
+#r = requests.post(url='https://api.soundoftext.com',json={"engine": "Google","data": {"text": "Hello, world","voice": "en-US"}})
+
+#main = r.json()
+print(r)'''

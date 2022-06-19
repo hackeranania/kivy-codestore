@@ -1,0 +1,31 @@
+from kivymd.app import MDApp
+from kivy.lang import Builder
+
+
+	
+
+class java(MDApp):
+	def build(self):
+		self.theme_cls.primary_palette = 'Teal'
+		self.theme_cls.theme_style = "Dark"
+		return Builder.load_file('java.kv')
+java().run()
+
+
+
+Screen : 
+	MDCard:
+		size_hint : None , None
+		#size : '280dp' , '180dp'
+		size : root.width , root.height
+		pos_hint : {'center_x': .5 , 'center_y': .5}
+	MDRectangleFlatButton : 
+		text : 'one '
+		pos_hint :{'x': 0.5 , 'y' : .4}	
+		
+	MDRaisedButton : 
+		text : 'one '
+		pos_hint :{'x': 0.5 , 'y' : .6}	
+	MDRaisedButton : 
+		text : 'three '
+		pos_hint :{'x': 0.5 , 'y' : .8}		

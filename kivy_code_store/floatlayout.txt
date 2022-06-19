@@ -1,0 +1,24 @@
+<Button>
+	font_size:32
+	size_hint: (.3,.3)
+<mygrid>
+			
+	FloatLayout:
+		size : root.width , root.height
+		Button:
+			text:'upper left '
+			pos_hint : {"x":0, "top":1}
+		Button:
+			text:'upper right'
+			pos_hint : {"x":.7, "top":1}
+		Button:
+			text:'center'
+			pos_hint : {"x":0.35, "y":.35}
+		Button:
+			text:'bottom right '
+			pos_hint : {"x":.7, "bottom":1}
+		Button:
+			text:'bottom left'
+
+	
+			

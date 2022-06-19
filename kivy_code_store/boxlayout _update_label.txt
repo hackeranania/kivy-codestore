@@ -1,0 +1,23 @@
+.py file 
+		no = self.ids.entry.text
+		self.ids.entry.text = ''
+		self.ids.first.text = 'hello ' + no
+.kv file 
+
+<mygrid>
+			
+	BoxLayout:
+		padding : 20
+		orientation : "vertical"
+		size : root.width , root.height
+		Label:
+			id : first
+			text:"hi what is you'r name??"
+		TextInput:
+			id : entry
+			multiline:False
+		Button:
+			text:'click here'
+			on_press: root.ext()		
+
+		

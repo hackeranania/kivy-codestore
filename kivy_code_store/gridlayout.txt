@@ -1,0 +1,5 @@
+
+class mygrid(GridLayout):
+	def __init__(self,**kwargs):
+		super(mygrid,self).__init__(**kwargs)
+		self.cols= 3

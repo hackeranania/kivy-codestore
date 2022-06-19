@@ -1,0 +1,72 @@
+from kivymd.app import MDApp
+from kivy.lang import Builder
+
+
+	
+
+class java(MDApp):
+
+	def mango(self,instace):
+		self.root.ids.label1.text = 'hi i am anania' + instace.icon
+
+	def build(self):
+		self.theme_cls.primary_palette = 'Teal'
+		self.theme_cls.theme_style = "Dark"
+		return Builder.load_file('java.kv')
+	def press(self):
+		self.root.ids.see.text = 'you clicked me one '	
+java().run()
+
+
+
+
+BoxLayout:
+    size : root.width , root.height
+
+
+
+
+    MDBottomNavigation:
+        current : 'ios'
+        text:'hi'
+        MDBottomNavigationItem:
+            name:'android '
+            text : 'Android'
+            icon: 'android'
+
+
+            MDLabel:
+                id      :  label1
+                text    : 'please show me how it works'
+                pos_hint:  {'center_x':.6555,'center_y':.259}
+                halign : 'center'
+
+
+            MDRectangleFlatButton
+                text:'click me '
+                pos_hint:{'x':0.5,'y':0.3}
+            MDSwitch:
+                pos_hint:{'center_x':.2 , 'center_y':.5}    
+
+
+
+            MDFloatingActionButtonSpeedDial:
+                #data :  app.data
+                root_button_anim : True
+                data : {'android':'android','ruby':'language-ruby','javascript':'language-javascript'}
+                #label_text_color       :1,0,0,1
+                #bg_color_stack_button  :1,1,0,1
+                #bg_color_root_button   :1,0,0,1
+                #color_icon_root_buttom :1,0,0,1 
+                #color_icon_stack_button :1,0,0,1 icons color
+                #bg_hint_color : 1,0,0,1 hint color
+
+                callback : app.mango
+
+           
+
+
+        MDBottomNavigationItem:
+            name : 'ios '
+            text : 'ios'
+            icon : 'apple'

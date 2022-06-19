@@ -1,0 +1,37 @@
+from kivy.uix.boxlayout import BoxLayout
+
+from kivymd.app import MDApp
+from kivy.lang import Builder
+
+
+
+
+class TestNavigationDrawer(MDApp):
+    def build(self):
+        return Builder.load_file('nav.kv')
+
+
+TestNavigationDrawer().run()
+
+
+Screen:
+
+    MDNavigationLayout:
+        MDNavigationDrawer:
+            id: nav_drawer
+            
+
+        ScreenManager:
+
+            Screen:
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "Navigation Drawer"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x:nav_drawer.set_state('toggle')]]
+
+
+                    Widget:
+

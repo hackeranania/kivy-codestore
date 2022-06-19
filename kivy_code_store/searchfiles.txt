@@ -1,0 +1,9 @@
+from os.path import expanduser
+path = expanduser("~")
+
+
+
+text_files = glob.glob(path + "/**/*.txt", recursive = True)
+
+
+print(text_files)

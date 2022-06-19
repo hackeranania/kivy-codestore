@@ -1,0 +1,31 @@
+from kivy.app import App
+from kivy.uix.widget import Widget 
+
+
+
+class my(Widget):
+	def switch(self,switchObject , switchValue):
+		if switchValue == False :
+			self.ids.man .text = 'switch is off'
+		else : 
+			self.ids.man.text = 'switch is no'	
+
+class java(App):
+	def build(self):
+		return my()
+java().run()		
+
+
+
+<my>
+	BoxLayout:
+		orientation : 'vertical'
+		size: root.width , root.height
+		Label : 
+			id : man
+			text : "select [b]part[/b]"
+			font_size : 32
+		Switch:
+			active : False
+			on_active : root.switch(self , self.active)
+		

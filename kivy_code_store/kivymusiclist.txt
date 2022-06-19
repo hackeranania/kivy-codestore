@@ -1,0 +1,56 @@
+from kivy.lang import Builder
+from kivy.properties import StringProperty
+from os.path import expanduser
+import glob
+from kivymd.app import MDApp
+from kivymd.uix.list import IRightBodyTouch, OneLineAvatarIconListItem
+from kivymd.uix.selectioncontrol import MDCheckbox
+from kivymd.icon_definitions import md_icons
+
+
+
+
+path = expanduser("~")
+files = glob.glob(path + "/**/*.mp3", recursive = True)
+
+
+
+
+print(files)
+class ListItemWithCheckbox(OneLineAvatarIconListItem):
+    '''Custom list item.'''
+
+    icon = StringProperty("android")
+
+
+
+
+class MainApp(MDApp):
+    def build(self):
+        return Builder.load_file('mus.kv')
+
+    def on_start(self):
+        icons = list(md_icons.keys())
+        for i in files:
+            self.root.ids.scroll.add_widget(
+                ListItemWithCheckbox(text=i, icon='android')
+            )
+
+
+MainApp().run()
+
+
+
+
+
+
+<ListItemWithCheckbox>:
+
+    IconLeftWidget:
+        icon: root.icon
+MDBoxLayout:
+
+    ScrollView:
+
+        MDList:
+            id: scroll

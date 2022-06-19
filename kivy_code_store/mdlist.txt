@@ -1,0 +1,14 @@
+MDList:
+								OneLineAvatarIconListItem:
+									on_release:screen_manage.current = '2'	
+									text:'Settings'
+									divider_color:0,0,0,0
+									IconLeftWidget:
+										icon:'cog'
+
+								OneLineIconListItem:
+									text:'Settings'
+									divider_color:0,0,0,0
+
+									IconLeftWidget:
+										icon:'cog'		

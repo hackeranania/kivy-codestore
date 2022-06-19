@@ -1,0 +1,169 @@
+from kivymd.app import MDApp
+from kivy.lang import Builder
+#from kivy.uix.screenmanager import ScreenManager , Screen
+import sqlite3
+
+con = sqlite3.connect('covid.db')
+c = con.cursor()
+c.execute('''CREATE TABLE IF NOT EXISTS shirt
+	(theme text)''')
+c.execute('''INSERT INTO shirt VALUES ('Dark')''')	
+	
+
+class java(MDApp):
+	def mango(self,instace):
+		icon = instace.icon
+		if icon == 'brightness-7':
+			self.theme_cls.theme_style = "Light"
+			mode = 'light'
+			c.execute('UPDATE shirt SET theme ="Light" ')
+			con.commit()
+		else:
+			self.theme_cls.theme_style = "Dark"
+			c.execute('UPDATE shirt SET theme ="Dark" ')
+			con.commit()
+	
+
+	def build(self):
+		c.execute('SELECT theme FROM shirt')
+		man = c.fetchone()
+		sawo = str(man)
+		fi = sawo.replace('(','')
+		tw = fi.replace(')','')
+		self.theme_cls.primary_palette = 'Teal'
+		thr = tw.replace(',','')
+		quote = thr.replace("'","")
+
+		self.theme_cls.theme_style = quote
+		return Builder.load_file('java.kv')
+		con.commit()
+
+java().run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+MDBoxLayout:       
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name:'Local area '
+            text : 'Local cases'
+            icon : 'chevron-down'
+            Image:
+                source : 'no.png'
+            MDLabel:
+                text:'NO INTERNET ACCESS'
+                pos_hint :{'center_x':.5 , 'center_y':.3} 
+                halign : 'center'    
+            MDFloatingActionButtonSpeedDial:
+                root_button_anim : True
+                data : {'DARK MODE':'brightness-4','LIGHT MODE':'brightness-7'}
+                callback : app.mango
+
+        MDBottomNavigationItem:
+            name : 'Gloabl '
+            text : 'Global cases'
+            icon :'google-earth'
+            Image:
+                source : 'no.png'
+            MDLabel:
+                text:'NO INTERNET ACCESS'
+                pos_hint :{'center_x':.5 , 'center_y':.3} 
+                halign : 'center'    
+            MDFloatingActionButtonSpeedDial:
+                id : jarvis
+                root_button_anim : True
+                data : {'DARK MODE':'brightness-4','LIGHT MODE':'brightness-7'}
+                callback : app.mango
+                Image:
+                    source : 'no.png'
+                MDLabel:
+                    text:'NO INTERNET ACCESS'
+                    pos_hint :{'center_x':.5 , 'center_y':.3} 
+                    halign : 'center'
+
+        MDBottomNavigationItem:
+            name : 'Report case'
+            text : 'Report Case'
+            icon :'account-circle' 
+            Image:
+                source : 'no.png'
+            MDLabel:
+                text:'NO INTERNET ACCESS'
+                pos_hint :{'center_x':.5 , 'center_y':.3} 
+                halign : 'center'    
+            MDFloatingActionButtonSpeedDial:
+                root_button_anim : True
+                data : {'DARK MODE':'brightness-4','LIGHT MODE':'brightness-7'}
+                callback : app.mango                    
+            Image:
+                source : 'no.png'
+            MDLabel:
+                text:'NO INTERNET ACCESS'
+                pos_hint :{'center_x':.5 , 'center_y':.3} 
+                halign : 'center'       
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MDSpinner:
+                size_hint: None, None
+                size: dp(46), dp(46)
+                

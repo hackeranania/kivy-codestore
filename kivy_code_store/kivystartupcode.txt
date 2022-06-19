@@ -1,0 +1,23 @@
+from kivy.app import App
+from kivy.uix.widget import Widget 
+
+
+
+class my(Widget):
+	pass
+
+class java(App):
+	def build(self):
+		return my()
+java().run()		
+
+<my>
+	BoxLayout:
+		oreiantaion : 'vertical'
+		size: root.width , root.height
+		Button:
+			text: 'hello world'
+		Button:
+			text: 'hello world'
+		Button:
+			text: 'hello world'		

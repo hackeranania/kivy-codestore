@@ -1,0 +1,29 @@
+from kivymd.app import MDApp
+from kivy.lang import Builder
+
+
+	
+
+class java(MDApp):
+	def build(self):
+		self.theme_cls.primary_palette = 'Teal'
+		self.theme_cls.theme_style = "Dark"
+		return Builder.load_file('java.kv')
+	def press(self):
+		self.root.ids.see.text = 'you clicked me one '	
+java().run()
+
+
+
+MDBoxLayout:
+	orientation : 'vertical'
+	#size : root.width , root.height
+
+	MDToolbar:
+		title: 'tool bar'
+    	left_action_items: [["menu"]]
+    	
+	MDLabel : 
+		id : see 
+		text : 'some stuff'
+		halign : 'center'

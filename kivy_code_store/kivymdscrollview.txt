@@ -1,0 +1,92 @@
+from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivymd.uix.boxlayout import MDBoxLayout
+class Layout_(MDBoxLayout):
+	pass
+		
+class maths(MDApp):
+	def build(self):
+		Builder.load_file('new.kv')
+		return Layout_()
+
+maths().run()		
+
+
+
+
+<Layout_>:
+    
+    ScrollView:
+        size : self.size
+        GridLayout:
+            size_hint_y:None
+            height:self.minimum_height
+            width:self.minimum_width
+            cols:2
+            spacing:'20dp'
+            padding:'20dp'
+
+            MDRaisedButton:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]
+            MDCard:
+                orientation :'vertical'
+                padding:'8dp'
+                size_hint:1,None
+                height:'210dp'
+                elevation:5 
+                border_radius:20
+                radius :[15]        
