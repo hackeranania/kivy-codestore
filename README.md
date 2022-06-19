@@ -1,0 +1,2 @@
+# kivy-codestore
+THIS IS MY KIVY CODE STROE BUT A LITTLE BIT MESSY 
